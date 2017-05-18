@@ -8,7 +8,7 @@ import {
 const OlMap = ({ coordinates, onMapMove }) =>
   (<div>
     <h1>Map</h1>
-    <Map view={{ center: coordinates, zoom: 2 }} onClick={onMapMove}>
+    <Map view={{ center: coordinates, zoom: 2 }} onMoveend={onMapMove}>
       <Layers>
         <layer.Tile />
       </Layers>

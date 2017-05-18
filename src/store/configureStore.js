@@ -1,9 +1,13 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from '../reducers'
 
-const enhancer = applyMiddleware(
-  thunk
+/* eslint-disable */
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+/* eslint-enable */
+const enhancer = composeEnhancers(
+  // Middleware you want to use in development:
+  applyMiddleware(thunk),
 )
 
 export default function configureStore(initialState) {

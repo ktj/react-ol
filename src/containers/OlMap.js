@@ -10,7 +10,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onMapMove: event => dispatch(MapActions.setCoordinates(event.coordinate))
+    onMapMove: event => dispatch(MapActions.setCoordinates(event.map.getView().getCenter()))
   }
 }
 
