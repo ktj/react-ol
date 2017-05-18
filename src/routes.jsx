@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router'
 import App from './containers/App'
 import HelloWorld from './components/HelloWorld'
 import Counter from './containers/Counter'
-import OlMap from './components/OlMap'
+import OlMap from './containers/OlMap'
 
 const routes = (
   <Route path="/" component={App}>
