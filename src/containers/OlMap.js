@@ -4,13 +4,17 @@ import * as MapActions from '../actions/map'
 
 function mapStateToProps(state) {
   return {
-    coordinates: state.map.coordinates
+    coordinates: state.map.coordinates,
+    zoom: state.map.zoom
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onMapMove: event => dispatch(MapActions.setCoordinates(event.map.getView().getCenter()))
+    onMapMove: (event) => {
+      dispatch(MapActions.setCoordinates(event.map.getView().getCenter()))
+      dispatch(MapActions.setZoom(event.map.getView().getZoom()))
+    }
   }
 }
 

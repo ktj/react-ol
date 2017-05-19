@@ -5,10 +5,10 @@ import {
    Map, Layers
 } from 'react-openlayers'
 
-const OlMap = ({ coordinates, onMapMove }) =>
+const OlMap = ({ coordinates, zoom, onMapMove }) =>
   (<div>
     <h1>Map</h1>
-    <Map view={{ center: coordinates, zoom: 2 }} onMoveend={onMapMove}>
+    <Map view={{ center: coordinates, zoom }} onMoveend={onMapMove}>
       <Layers>
         <layer.Tile />
       </Layers>
@@ -20,6 +20,7 @@ const OlMap = ({ coordinates, onMapMove }) =>
 
 OlMap.propTypes = {
   coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
+  zoom: PropTypes.number.isRequired
 }
 
 export default OlMap
