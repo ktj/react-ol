@@ -8,4 +8,6 @@ export default () =>
     <Link to="counter">Counter</Link>
     {' '}
     <Link to="map">Map</Link>
+    {' '}
+    <Link to="list">List</Link>
   </div>
